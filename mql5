@@ -1,0 +1,163 @@
+
+//+------------------------------------------------------------------+
+//|                                                       Pyramiding mt5 |
+//|                                 Developed by Forex Robot Easy Team |
+//|                                                         forexroboteasy.com |
+//+------------------------------------------------------------------+
+
+// Defining input parameters
+input bool enableSeriesInitiation = true;        // Enable/disable series initiation
+input double takeProfit = 100.0;                 // Aggregate take profit in deposit currency
+input double lotSizeIncrement = 0.01;            // Lot size increment
+input double maxLotSize = 10.0;                  // Maximum lot size
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                     |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Check if the account is a hedge type account
+    if (AccountInfoInteger(ACCOUNT_HEDGE) != 1)
+    {
+        Print('Error: This code requires a hedge type account.');
+        return INIT_FAILED;
+    }
+    
+    // Add necessary initialization code here
+    
+    return INIT_SUCCEEDED;
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                   |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Add necessary deinitialization code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                              |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Add necessary code to handle trades and series initiation here
+    
+    // Check if all orders are closed and series initiation is enabled
+    if (IsAllOrdersClosed() && enableSeriesInitiation)
+    {
+        InitiateNewSeries();
+    }
+    
+    // Check if take profit is reached and close all orders
+    if (IsTakeProfitReached(takeProfit))
+    {
+        CloseAllOrders();
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Check if all orders are closed                                     |
+//+------------------------------------------------------------------+
+bool IsAllOrdersClosed()
+{
+    // Add necessary code to check if all orders are closed
+    return true;  // Placeholder, replace with actual code
+}
+
+//+------------------------------------------------------------------+
+//| Initiate a new series of orders                                    |
+//+------------------------------------------------------------------+
+void InitiateNewSeries()
+{
+    // Add necessary code to initiate a new series of orders
+}
+
+//+------------------------------------------------------------------+
+//| Check if take profit is reached                                    |
+//+------------------------------------------------------------------+
+bool IsTakeProfitReached(const double takeProfit)
+{
+    // Add necessary code to check if take profit is reached
+    return false;  // Placeholder, replace with actual code
+}
+
+//+------------------------------------------------------------------+
+//| Close all open orders                                              |
+//+------------------------------------------------------------------+
+void CloseAllOrders()
+{
+    // Add necessary code to close all open orders
+}
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                     |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Add necessary initialization code here
+    
+    return INIT_SUCCEEDED;
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                   |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Add necessary deinitialization code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                              |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Add necessary code to handle trades and series initiation here
+    
+    // Check if all orders are closed and series initiation is enabled
+    if (IsAllOrdersClosed() && enableSeriesInitiation)
+    {
+        InitiateNewSeries();
+    }
+    
+    // Check if take profit is reached and close all orders
+    if (IsTakeProfitReached(takeProfit))
+    {
+        CloseAllOrders();
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Check if all orders are closed                                     |
+//+------------------------------------------------------------------+
+bool IsAllOrdersClosed()
+{
+    // Add necessary code to check if all orders are closed
+    return true;  // Placeholder, replace with actual code
+}
+
+//+------------------------------------------------------------------+
+//| Initiate a new series of orders                                    |
+//+------------------------------------------------------------------+
+void InitiateNewSeries()
+{
+    // Add necessary code to initiate a new series of orders
+}
+
+//+------------------------------------------------------------------+
+//| Check if take profit is reached                                    |
+//+------------------------------------------------------------------+
+bool IsTakeProfitReached(const double takeProfit)
+{
+    // Add necessary code to check if take profit is reached
+    return false;  // Placeholder, replace with actual code
+}
+
+//+------------------------------------------------------------------+
+//| Close all open orders                                              |
+//+------------------------------------------------------------------+
+void CloseAllOrders()
+{
+    // Add necessary code to close all open orders
+}
